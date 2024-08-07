@@ -44,4 +44,6 @@ ME - My neko wolf character named 'Experiment#13'.
 Brett Diver - Voice of Arthur Ford screaming in agony.
 
 CaptainSwag101 - Wav file decoding function.
+
+Cheshyre (Composer of The Day Before from MADNESS Project Nexus: Classic) - https://www.newgrounds.com/audio/listen/477973
 	
