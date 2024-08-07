@@ -23,6 +23,7 @@ C code variables to add your own functionality into a node.
 # How to use it?
 
 Download and Install DevkitPro: https://devkitpro.org/wiki/Getting_Started
+
 Download Godot game engine 4.0 SPECIFICLY: https://godotengine.org/download/windows/
 
 Download this Repository and extract it somewhere safe. (The project will create a folder called '3DSProjects' in the root of the drive it is contained in. (C:/, D:/, E:/ or F:/ etc...) or the one that is specified in the 'drive letter' editbox while running the project before creating the folder using the 'Compile Game' button.)
