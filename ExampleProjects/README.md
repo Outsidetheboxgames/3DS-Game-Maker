@@ -4,7 +4,7 @@ THE EDITOR WILL OPEN A FOLDER IN FILE EXPLORER AND THEN YOU WILL NEED TO EXECUTE
 To open this project use the open currenly opened scene button with the tscn scene open.
 
 This project shows off (more than) several things like:
-	Wav audio file playing support. (copied from https://github.com/CaptainSwag101/NAMELESS converted to c by ME!!) 
+	Wav audio file playing support. (copied from https://github.com/CaptainSwag101/NAMELESS converted to c by ME!!)\n
 	T3s file auto generation with multiple folders acting as the spritesheets!
 	Groups for making things like but not limited to: Scenes, Wavespawns, Scripted sequences, GUI and more!!
 	no collisions. :( (SOON TO COME!)
