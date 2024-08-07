@@ -20,6 +20,8 @@ Global replacements like 'SELFOBJ' (Current node) and 'GROUPENABLE' (Current nod
 
 C code variables to add your own functionality into a node.
 
+Only 2D support. (I may add 3D soon.)
+
 # How to use it?
 
 Download and Install DevkitPro: https://devkitpro.org/wiki/Getting_Started
