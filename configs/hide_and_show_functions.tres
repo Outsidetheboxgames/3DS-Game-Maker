@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://gl37rwjw4rk7"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_vrps5"]
+
+[resource]
+script = ExtResource("1_vrps5")
+extra_variables_to_add = ""
+extra_code_to_add_to_global_update = "SELFOBJEnabled = GROUPENABLE;"
+extra_code_to_add_to_update = ""

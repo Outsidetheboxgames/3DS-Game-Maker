@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://b72jwn3rr3rl8"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_uoc23"]
+
+[resource]
+script = ExtResource("1_uoc23")
+extra_variables_to_add = "float SELFOBJTime = 0.0f;
+bool SELFOBJFired = false;"
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (kDown & KEY_L)
+{
+	if (!SELFOBJFired)
+	{
+		if (PistolAmmo > 0)
+		{
+			SELFOBJ.params.pos.x = Pistol.params.pos.x;
+			SELFOBJ.params.pos.y = Pistol.params.pos.y;
+			SELFOBJ.params.angle = Pistol.params.angle;
+			SELFOBJFired = true;
+		}
+	}
+}
+SELFOBJDrawingEnabled = SELFOBJFired;
+if (SELFOBJFired)
+{
+	SELFOBJTime += delta;
+}
+if (SELFOBJTime >= 0.05f)
+{
+	SELFOBJFired = false;
+	SELFOBJTime = 0.0f;
+}"

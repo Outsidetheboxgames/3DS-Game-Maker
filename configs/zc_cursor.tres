@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://c0v5vlmd08otu"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_tvvfh"]
+
+[resource]
+script = ExtResource("1_tvvfh")
+extra_variables_to_add = ""
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (touch.px != 0 && touch.py != 0)
+{
+	SELFOBJDrawingEnabled = true;
+	SELFOBJ.params.pos.x = touch.px + 40;
+	SELFOBJ.params.pos.y = touch.py;
+}
+else if (touch.px == 0 && touch.py == 0)
+{
+	SELFOBJDrawingEnabled = false;
+}"

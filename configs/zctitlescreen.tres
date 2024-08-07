@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://b132hs8la70s2"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_1ii71"]
+
+[resource]
+script = ExtResource("1_1ii71")
+extra_variables_to_add = ""
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "bool touchingInBox = (touch.py > SELFOBJ.params.pos.y && touch.py < SELFOBJ.params.pos.y + SELFOBJ.params.pos.h);
+if (kDown & KEY_TOUCH && touchingInBox)
+{
+	GameGroupEnabled = true;
+	TitleGroupEnabled = false;
+}"

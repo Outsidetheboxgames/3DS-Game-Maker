@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://cren2gqmahgsl"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_50ppn"]
+
+[resource]
+script = ExtResource("1_50ppn")
+extra_variables_to_add = ""
+extra_code_to_add_to_update = "float x1 = SELFOBJ.params.pos.x;
+float y1 = SELFOBJ.params.pos.y;
+float x2 = touch.px;
+float y2 = touch.py;
+float dot = x1*x2 + y1*y2;
+float det = x1*y2 - y1*x2;
+if (touch.px != 0 && touch.py != 0)
+	SELFOBJ.params.angle = atan2(y2 - y1, x2 - x1);
+	"

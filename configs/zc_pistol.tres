@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://64xmhyc3oeh0"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_cyb3r"]
+
+[resource]
+script = ExtResource("1_cyb3r")
+extra_variables_to_add = "int SELFOBJAmmo = 15;
+float SELFOBJTime = 0.0f;
+bool SELFOBJFired = false;"
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (kDown & KEY_L)
+{
+	if (!SELFOBJFired)
+	{
+		if (SELFOBJAmmo > 0) 
+		{
+			playWav(\"romfs:/snd/pistolFire.wav\", 10, false);
+			SELFOBJAmmo -= 1;
+			SELFOBJFired = true;
+			if (SELFOBJAmmo <= 15 / 3)
+			{
+				playWav(\"romfs:/snd/lowammo_01.wav\", 9, false);			
+			}
+		}
+		else
+		{
+			playWav(\"romfs:/snd/clipempty.wav\", 9, false);		
+			SELFOBJFired = true;
+		}
+	}
+}
+if (kDown & KEY_R)
+	if (!SELFOBJFired)
+	{
+		if (SELFOBJAmmo <= 0) 
+		{
+			playWav(\"romfs:/snd/reload.wav\", 9, false);		
+			SELFOBJAmmo = 15;
+		}
+	}
+if (SELFOBJFired)
+{
+	SELFOBJTime += delta;
+}
+if (SELFOBJTime >= 0.03f)
+{
+	SELFOBJFired = false;
+	SELFOBJTime = 0.0f;
+}
+"

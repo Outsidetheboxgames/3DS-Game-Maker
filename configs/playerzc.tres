@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://da1b3ehfnflb8"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_8pyjd"]
+
+[resource]
+script = ExtResource("1_8pyjd")
+extra_variables_to_add = "float PlayerSpeed = 2.5f;"
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (kHeld & KEY_CPAD_LEFT)
+		if (Player.params.pos.x > 0)
+			Player.params.pos.x -=  PlayerSpeed;
+if (kHeld &  KEY_CPAD_RIGHT)
+	if (Player.params.pos.x < 400)
+		Player.params.pos.x += PlayerSpeed;
+if (kHeld & KEY_CPAD_UP)
+	if (Player.params.pos.y > 0)
+		Player.params.pos.y -= PlayerSpeed;
+if (kHeld & KEY_CPAD_DOWN)
+	if (Player.params.pos.y < 240)
+		Player.params.pos.y += PlayerSpeed;
+if (kDown & KEY_A)
+{
+	if (GameGroupEnabled)
+	{
+		ZombiesGroupEnabled = true;
+	}
+}"

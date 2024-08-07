@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://b51hikus07jgd"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_u3jyi"]
+
+[resource]
+script = ExtResource("1_u3jyi")
+extra_variables_to_add = "int currentlySelectedMenuItem = 0;"
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (kDown & KEY_A)
+{
+	if (currentlySelectedMenuItem == 0)
+	{
+		playWav(\"romfs:/snd/music_twelveguage.wav\", 1, true);
+		GameGroupEnabled = true;
+		TitleGroupEnabled = false;
+	}
+}
+if (kDown & KEY_UP)
+	currentlySelectedMenuItem -= 1;
+if (kDown & KEY_DOWN)
+	currentlySelectedMenuItem += 1;
+
+if (currentlySelectedMenuItem < 0)
+	currentlySelectedMenuItem = 1;
+if (currentlySelectedMenuItem > 1)
+	currentlySelectedMenuItem = 0;
+
+if (currentlySelectedMenuItem == 0)
+{
+	SELFOBJ.params.pos.x = PlayButton.params.pos.x + PlayButton.params.pos.w;
+	SELFOBJ.params.pos.y = PlayButton.params.pos.y;
+}
+
+if (currentlySelectedMenuItem == 1)
+{
+	SELFOBJ.params.pos.x = TutorialButton.params.pos.x + TutorialButton.params.pos.w;
+	SELFOBJ.params.pos.y = TutorialButton.params.pos.y;
+}"

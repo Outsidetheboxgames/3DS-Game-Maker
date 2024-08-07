@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://x0admf6g0jwp"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_g34gd"]
+
+[resource]
+script = ExtResource("1_g34gd")
+extra_variables_to_add = "int16_t *SELFOBJ_audioBuffer = NULL;"
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = ""

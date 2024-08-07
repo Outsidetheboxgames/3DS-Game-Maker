@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://ywgpek20unjr"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_ijrso"]
+
+[resource]
+script = ExtResource("1_ijrso")
+extra_variables_to_add = "float SELFOBJDistanceFromTouch = 0;
+float SELFOBJDesiredScale = 1;"
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (SELFOBJDistanceFromTouch > 0)
+{
+	SELFOBJDesiredScale = distance(SELFOBJ.params.pos.x, touch.px, SELFOBJ.params.pos.y, touch.py);
+	SELFOBJ.params.pos.w = SELFOBJDesiredScale;
+}
+
+"

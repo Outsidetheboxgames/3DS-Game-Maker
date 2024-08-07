@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://b8hq6u0n73vvd"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_nlwut"]
+
+[resource]
+script = ExtResource("1_nlwut")
+extra_variables_to_add = "float SELFOBJVelX = 0.0f;
+float SELFOBJVelY = 0.0f;"
+extra_code_to_add_to_update = "
+u32 kHeld = hidKeysHeld();
+u32 kDown = hidKeysDown();
+if (kHeld & KEY_CPAD_LEFT)
+		if (SELFOBJ.params.pos.x > 0)
+		SELFOBJVelX = -PlayerSpeed;
+if (kHeld &  KEY_CPAD_RIGHT)
+	if (SELFOBJ.params.pos.x < 320 - SELFOBJ.params.pos.w)
+		SELFOBJVelX = PlayerSpeed;
+if (!(kHeld & KEY_CPAD_LEFT) && !(kHeld &  KEY_CPAD_RIGHT))
+	SELFOBJVelX = 0.0f;
+SELFOBJ.params.pos.x += SELFOBJVelX;
+SELFOBJ.params.pos.y += SELFOBJVelY;
+if (SELFOBJ.params.pos.y < 240 - SELFOBJ.params.pos.h)
+	SELFOBJVelY += grav * 2 * delta;
+else if (SELFOBJ.params.pos.y > 240 - SELFOBJ.params.pos.h)
+	SELFOBJVelY = ((240 - SELFOBJ.params.pos.h) - SELFOBJ.params.pos.y) / 4; 
+
+if (SELFOBJ.params.pos.x < 0 || SELFOBJ.params.pos.x > 320 - SELFOBJ.params.pos.w )
+	SELFOBJVelX = -SELFOBJVelX / 4;
+
+bool isIt = SELFOBJ.params.pos.y > (240 - SELFOBJ.params.pos.h - 2);
+if ((kDown & KEY_A) && isIt)
+		SELFOBJVelY = -5.0f;"

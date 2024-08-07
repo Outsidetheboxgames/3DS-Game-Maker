@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://ddvxr5bruyxva"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_p0j2i"]
+
+[resource]
+script = ExtResource("1_p0j2i")
+extra_variables_to_add = ""
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "if (kDown & KEY_TOUCH)
+{
+	PistolAmmo = 15;
+	GROUPENABLE = false;
+}"

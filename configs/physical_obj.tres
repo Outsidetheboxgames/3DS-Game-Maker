@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://c0cdgseqfkslg"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_bje1t"]
+
+[resource]
+script = ExtResource("1_bje1t")
+extra_variables_to_add = "float SELFOBJVelY = 0.0f;
+bool SELFOBJBouncing = false;"
+extra_code_to_add_to_update = "SELFOBJVelY += grav * delta;
+if (SELFOBJ.params.pos.y > 240 - 48)
+{
+	if (!SELFOBJBouncing)
+		SELFOBJBouncing = true;
+		SELFOBJVelY = -SELFOBJVelY / 4;
+}
+else
+{
+	SELFOBJ.params.pos.y += SELFOBJVelY;
+	if (abs(SELFOBJVelY) <= 0.1)
+		SELFOBJBouncing = false;
+}"

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://d2261vxdprhpa"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_h2186"]
+
+[resource]
+script = ExtResource("1_h2186")
+extra_variables_to_add = "float PlayerVelX = 0.0f;
+float PlayerVelY = 0.0f;
+float PlayerSpeed = 1.75f;"
+extra_code_to_add_to_update = "u32 kHeld = hidKeysHeld();
+u32 kDown = hidKeysDown();
+if (kHeld & KEY_CPAD_LEFT)
+		if (Player.params.pos.x > boundryXLeft)
+		PlayerVelX = -PlayerSpeed;
+if (kHeld &  KEY_CPAD_RIGHT)
+	if (Player.params.pos.x < boundryXRight - Player.params.pos.w)
+		PlayerVelX = PlayerSpeed;
+if (!(kHeld & KEY_CPAD_LEFT) && !(kHeld &  KEY_CPAD_RIGHT))
+	PlayerVelX = 0.0f;
+Player.params.pos.x += PlayerVelX;
+Player.params.pos.y += PlayerVelY;
+if (Player.params.pos.y < 240 - Player.params.pos.h)
+	PlayerVelY += grav * delta;
+else if (Player.params.pos.y > 240 - Player.params.pos.h)
+	PlayerVelY = ((240 - Player.params.pos.h) - Player.params.pos.y) / 4; 
+
+bool isIt = Player.params.pos.y > (240 - Player.params.pos.h - 2);
+if ((kDown & KEY_A) && isIt)
+		PlayerVelY = -5.0f;"

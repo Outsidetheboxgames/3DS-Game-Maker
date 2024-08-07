@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://bqcpi6da483jm"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_rvwd4"]
+
+[resource]
+script = ExtResource("1_rvwd4")
+extra_variables_to_add = ""
+extra_code_to_add_to_update = "u32 kHeld = hidKeysHeld();
+if (kHeld & KEY_CPAD_LEFT)
+		if (Player.params.pos.x > 0)
+			Player.params.pos.x--;
+if (kHeld &  KEY_CPAD_RIGHT)
+	if (Player.params.pos.x < (400 - 32))
+		Player.params.pos.x++;
+if (kHeld & KEY_CPAD_UP)
+	Player.params.pos.y--;
+if (kHeld &  KEY_CPAD_DOWN)
+	Player.params.pos.y++;"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://cmwrv27lp4d57"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_dnr1m"]
+
+[resource]
+script = ExtResource("1_dnr1m")
+extra_variables_to_add = ""
+extra_code_to_add_to_update = "if (kHeld & KEY_CPAD_LEFT)
+		SELFOBJ.params.pos.x--;
+if (kHeld &  KEY_CPAD_RIGHT)
+	SELFOBJ.params.pos.x++;
+if (kHeld & KEY_CPAD_UP)
+	SELFOBJ.params.pos.y--;
+if (kHeld &  KEY_CPAD_DOWN)
+	SELFOBJ.params.pos.y++;"

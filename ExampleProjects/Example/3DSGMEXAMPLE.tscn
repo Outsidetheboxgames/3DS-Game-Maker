@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://bde6dj1rvbce0"]
+
+[ext_resource type="PackedScene" uid="uid://46h38yx4v8xr" path="res://main.tscn" id="1_55bxl"]
+[ext_resource type="Texture2D" uid="uid://djjc8f31ttkyw" path="res://ExampleProjects/Example/gfx/sprites/player_portrait.png" id="2_fj50x"]
+[ext_resource type="Script" path="res://3dssprite.gd" id="3_3k1e1"]
+[ext_resource type="Texture2D" uid="uid://ch4xadtm406n1" path="res://ExampleProjects/Example/gfx/spritesButEvil/player_portraitEVIL.png" id="4_fujdr"]
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="4_xd14o"]
+[ext_resource type="Resource" uid="uid://b27kagedgothl" path="res://configs/movetotouch.tres" id="6_cmdos"]
+[ext_resource type="Resource" uid="uid://gl37rwjw4rk7" path="res://configs/hide_and_show_functions.tres" id="7_oo50c"]
+
+[sub_resource type="Resource" id="Resource_bdu8n"]
+script = ExtResource("4_xd14o")
+extra_variables_to_add = ""
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "SELFOBJ.params.angle += delta;"
+
+[sub_resource type="Resource" id="Resource_3p7uh"]
+script = ExtResource("4_xd14o")
+extra_variables_to_add = ""
+extra_code_to_add_to_global_update = ""
+extra_code_to_add_to_update = "SELFOBJ.params.angle += delta;"
+
+[node name="3dsgmexample" type="Node"]
+
+[node name="main" parent="." instance=ExtResource("1_55bxl")]
+top_screen_bg_color = Color(0.184314, 0.184314, 0.184314, 1)
+bottom_screen_bg_color = Color(0.407843, 0.407843, 0.407843, 1)
+project_name = "Example"
+global_vars = "float delta = 0.01666666666667f;"
+global_sprite_sheets = Array[String]([])
+global_groups = Array[String](["Game", "GUI", "FORD"])
+global_group_defaults = Array[bool]([true, true, false])
+extra_init_functions = "playWav(\"romfs:/snd/brett_pain_big2.wav\", 1, true);
+playWav(\"romfs:/snd/theDayBefore.wav\", 2, true);"
+
+[node name="Citro2DSprite" type="Sprite2D" parent="main"]
+z_index = 1
+z_as_relative = false
+position = Vector2(468, 226)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fj50x")
+centered = false
+offset = Vector2(-126, -168)
+script = ExtResource("3_3k1e1")
+configs = Array[ExtResource("4_xd14o")]([SubResource("Resource_bdu8n"), ExtResource("7_oo50c")])
+
+[node name="Citro2DSprite2" type="Sprite2D" parent="main"]
+z_index = 1
+z_as_relative = false
+position = Vector2(684, 226)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_fujdr")
+centered = false
+offset = Vector2(-126, -168)
+script = ExtResource("3_3k1e1")
+sheet_variable = "spriteSheet1"
+configs = Array[ExtResource("4_xd14o")]([SubResource("Resource_3p7uh"), ExtResource("7_oo50c")])
+
+[node name="Citro2DSprite3" type="Sprite2D" parent="main"]
+z_index = 1
+z_as_relative = false
+position = Vector2(573, 448)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fj50x")
+centered = false
+offset = Vector2(-219, -174)
+script = ExtResource("3_3k1e1")
+group = "GUI"
+screen = 1
+configs = Array[ExtResource("4_xd14o")]([ExtResource("6_cmdos"), ExtResource("7_oo50c")])
+
+[node name="THIS TEXT DOESNT APPEAR IN GAME!" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 121.0
+offset_right = 701.0
+offset_bottom = 144.0
+scale = Vector2(0.5, 0.5)
+text = "Sprite loaded from GOOD spritesheet."
+
+[node name="THIS TEXT DOESNT APPEAR IN GAME!2" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 121.0
+offset_right = 909.0
+offset_bottom = 144.0
+scale = Vector2(0.5, 0.5)
+text = "Sprite loaded from EVIL spritesheet."
+
+[node name="THIS TEXT DOESNT APPEAR IN GAME!3" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 343.0
+offset_right = 758.0
+offset_bottom = 366.0
+scale = Vector2(0.5, 0.5)
+text = "Sprite that moves to the touch position smoothly."
+
+[node name="THIS IS A CHILD TEXT THAT DOESNT APPEAR TOO!" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 979.0
+offset_top = 582.0
+offset_right = 1149.0
+offset_bottom = 605.0
+text = "TOGGLE THE SCREENS"
+
+[node name="THIS IS A CHILD TEXT THAT DOESNT APPEAR TOO!2" type="Label" parent="main"]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 12.0
+offset_right = 1006.0
+offset_bottom = 35.0
+text = "COMPILE GAME (doesn't acually compile for you)"

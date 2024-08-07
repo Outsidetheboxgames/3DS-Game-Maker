@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://ceybdn8ff17wo"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_i6kih"]
+
+[resource]
+script = ExtResource("1_i6kih")
+extra_variables_to_add = "float boundryXLeft;
+float boundryXRight;"
+extra_code_to_add_to_update = "u32 kHeld = hidKeysHeld();
+boundryXLeft = BG.params.pos.x;
+boundryXRight = BG.params.pos.x + BG.params.pos.w;
+float xLeft = (BG.params.pos.x -  Player.params.pos.x) / 320 * PlayerSpeed;
+float xRight = ((BG.params.pos.x + BG.params.pos.w) -  Player.params.pos.x) / 320 * PlayerSpeed;
+if (Player.params.pos.x < boundryXLeft)
+	if (kHeld & KEY_CPAD_LEFT)
+		BG.params.pos.x -= xLeft;
+if (Player.params.pos.x > boundryXRight - Player.params.pos.w)
+	if (kHeld & KEY_CPAD_RIGHT)
+		BG.params.pos.x -= xRight;"

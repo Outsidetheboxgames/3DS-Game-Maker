@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CitroSpriteConfig" load_steps=2 format=3 uid="uid://b27kagedgothl"]
+
+[ext_resource type="Script" path="res://SpriteConfig.gd" id="1_ylhga"]
+
+[resource]
+script = ExtResource("1_ylhga")
+extra_variables_to_add = "float SELFOBJMoveX = 0.0f;
+float SELFOBJMoveY = 0.0f;"
+extra_code_to_add_to_update = "SELFOBJMoveX -= SELFOBJMoveX / 4;
+SELFOBJMoveY -= SELFOBJMoveY / 4;
+if (touch.px != 0 && touch.py != 0)
+	SELFOBJMoveX = (touch.px - SELFOBJ.params.pos.x) / 4;
+	SELFOBJMoveY = (touch.py - SELFOBJ.params.pos.y) / 4;
+	SELFOBJ.params.pos.x += SELFOBJMoveX;
+	SELFOBJ.params.pos.y += SELFOBJMoveY;
+
+
+"
