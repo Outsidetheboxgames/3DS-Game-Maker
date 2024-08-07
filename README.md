@@ -40,7 +40,7 @@ https://github.com/Outsidetheboxgames/3DS-Game-Maker/wiki
 
 ME - My neko wolf character named 'Experiment#13'.
 
-Brett Diver - Voice of Arthur Ford screaming in agony.
+Brett Driver - Voice of Arthur Ford screaming in agony.
 
 CaptainSwag101 - Wav file decoding function.
 
