@@ -32,6 +32,10 @@ Download this Repository and extract it somewhere safe. (The project will create
 
 After ''''Compiling the game'''' you are required (unless you don't want to make 3ds games) to open a cmd process (in the folder using the context menu or using 'cd' and the path to the created c project folder) with DevkitPro installed. Executing 'make' will compile the game with DevkitPro and Citro2D.
 
+## Make sure to check out the wiki!!
+
+https://github.com/Outsidetheboxgames/3DS-Game-Maker/wiki
+
 # Credits:
 
 ME - My neko wolf character named 'Experiment#13'.
