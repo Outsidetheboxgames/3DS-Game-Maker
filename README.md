@@ -45,3 +45,9 @@ Brett Diver - Voice of Arthur Ford screaming in agony.
 CaptainSwag101 - Wav file decoding function.
 
 Cheshyre (Composer of The Day Before from MADNESS Project Nexus: Classic) - https://www.newgrounds.com/audio/listen/477973
+
+DigitalDesignDude - Current Updater/Maintainer of DS Game Maker. (Also where I got this idea to make this!)
+
+https://digitaldesigndude.github.io/DSGM-Resource-Site/index.html
+
+https://www.youtube.com/channel/UCVmba1o66nWG6p-82g22iyg
