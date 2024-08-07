@@ -2,7 +2,7 @@
 It makes GOOD games. (using DevkitPro and Godot game engine.)
 
 # What it does:
-It automates the process of making 3DS Citro2D sprite Initiate an Update code from custom class Sprite2D nodes.
+It automates the process of making 3DS Citro2D sprite Initiate and Update code respectively from a custom class Sprite2D node.
 
 # What it currently has:
 
